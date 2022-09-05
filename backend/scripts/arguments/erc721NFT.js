@@ -1,0 +1,1 @@
+module.exports = ["Nitro ERC721 NFT","Nitro721"];

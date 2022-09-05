@@ -1,0 +1,1 @@
+module.exports = ["Nitro ERC20 Token","Nitro"];
