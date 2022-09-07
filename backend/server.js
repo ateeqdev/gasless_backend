@@ -21,17 +21,17 @@ async function getInstance(name) {
   return new ethers.Contract(address, abi, signer);
 }
 
-async function signMint(account) {
+async function signTx(account, functionName, tokenId, amount) {
   const forwarder = await getInstance("MinimalForwarder");
   const erc1155 = await getInstance("ERC1155NFT");
 
   const { PRIVATE_KEY: signer } = process.env;
   const from = new ethers.Wallet(signer).address;
   console.log(`Signing minting 100 tokens of id 1 to ${account} as ${from}...`);
-  const data = erc1155.interface.encodeFunctionData("mint", [
+  const data = erc1155.interface.encodeFunctionData(functionName, [
     account,
-    1,
-    100,
+    tokenId,
+    amount,
     0xff,
   ]);
   const result = await signMetaTxRequest(signer, forwarder, {
@@ -49,10 +49,16 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/prepare", async function (req, res) {
+app.get("/transfer", async function (req, res) {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.send(await signMint(req.query.account));
+  res.send(await signTx(req.query.account, "mint", 1, 100));
+});
+
+app.get("/mint", async function (req, res) {
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.send(await signTx(req.query.account, "mint", 2, 1));
 });
 
 app.listen(30001);

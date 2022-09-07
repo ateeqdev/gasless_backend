@@ -37,7 +37,7 @@ export default class App extends React.Component {
     }
   }
 
-  async claimNewMint() {
+  async claimNewMint(apiEndpoint) {
     if (typeof window.ethereum !== "undefined") {
       //ethereum is usable, get reference to the contract
       await this.requestAccount();
@@ -53,7 +53,7 @@ export default class App extends React.Component {
         MinimalForwarder.abi,
         signer
       );
-      fetch("http://localhost:30001/prepare?account=" + address, {
+      fetch("http://localhost:30001/" + apiEndpoint + "?account=" + address, {
         method: "get",
         dataType: "json",
         headers: {
@@ -93,10 +93,18 @@ export default class App extends React.Component {
         <hr />
         <button
           onClick={() => {
-            this.claimNewMint();
+            this.claimNewMint("transfer");
           }}
         >
           Claim 100 Nitro Tokens
+        </button>
+        <hr />
+        <button
+          onClick={() => {
+            this.claimNewMint("mint");
+          }}
+        >
+          Use XP to mint a new car
         </button>
       </div>
     );
