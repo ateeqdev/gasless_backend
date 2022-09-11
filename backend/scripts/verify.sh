@@ -1,2 +1,2 @@
-npx hardhat verify --network AVAXFUJI 0x158675B7381b53380242f2F6d344A07FA241C5aC;
-npx hardhat verify --network AVAXFUJI 0x3b1C5769c04071EFd3AAd0106F52360c711D10B1 --constructor-args scripts/arguments/ERC1155NFT.js;
+npx hardhat verify --network AVAXFUJI 0x1A9aeA7b12D317b94f07E6579553d9F07D31d15E;
+npx hardhat verify --network AVAXFUJI 0xDAD1906D643898371bd47f1447474bc7eb7a895C --constructor-args scripts/arguments/ERC1155NFT.js;
