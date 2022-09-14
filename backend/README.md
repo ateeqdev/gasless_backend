@@ -26,37 +26,74 @@ Interfaces are used to allow interactions between contracts without requiring ca
 
 None.
 
-### Testnet (Avalanche Fuji)
+### Testnet (Avalanche Fuji C-Chain)
 
 #### NitroLeague
-[0xd8cbfeb1f6a8659ead3b060a45f2b00775714812](https://testnet.snowtrace.io/address/0xd8cbfeb1f6a8659ead3b060a45f2b00775714812)
+[0x91A153bB7478c8a73aE1FAe4754ea73A12B0b7AB](https://testnet.snowtrace.io/address/0x91A153bB7478c8a73aE1FAe4754ea73A12B0b7AB)
 
 #### RaceEventFactory
-[0x6724dcbd93d908cae1be8a04C50868382067CC14](https://testnet.snowtrace.io/address/0x6724dcbd93d908cae1be8a04C50868382067CC14)
+[0x0F791DBF7281b5e178761FE2262fD7bd0772B794](https://testnet.snowtrace.io/address/0x0F791DBF7281b5e178761FE2262fD7bd0772B794)
 
 #### RaceFactory
-[0x534Dd1d8280F9982a62880b51493fD979a1BE180](https://testnet.snowtrace.io/address/0x534Dd1d8280F9982a62880b51493fD979a1BE180)
+[0xB6Cd52B65D4600Ba267127905b83c32096fF24d9](https://testnet.snowtrace.io/address/0xB6Cd52B65D4600Ba267127905b83c32096fF24d9)
 
 #### RewardFactory
-[0x6835257Ef09a3ee08f4137c8C8AbD7EC577a8eF5](https://testnet.snowtrace.io/address/0x6835257Ef09a3ee08f4137c8C8AbD7EC577a8eF5)
+[0x4f6bE69b9242e83F8d3eA1E645dc377759B9eB0a](https://testnet.snowtrace.io/address/0x4f6bE69b9242e83F8d3eA1E645dc377759B9eB0a)
 
 #### RaceEvent
-[0xb6Bd1990ee4413DD86e4b93E84bAfeC361d445a3](https://testnet.snowtrace.io/address/0xb6Bd1990ee4413DD86e4b93E84bAfeC361d445a3)
+[0xEb802a211E6A188cD24a8DD7E51861EB20D26932](https://testnet.snowtrace.io/address/0xEb802a211E6A188cD24a8DD7E51861EB20D26932)
 
 #### Race
-[0x3E4E2326ED687C2399E450c824697059263A1Bc5](https://testnet.snowtrace.io/address/0x3E4E2326ED687C2399E450c824697059263A1Bc5)
+[0xbA467e6C7bF37Ba620857C6c01A37f6e8ebb6797](https://testnet.snowtrace.io/address/0xbA467e6C7bF37Ba620857C6c01A37f6e8ebb6797)
 
 #### RewardManager
-[0x3155b3ac39E10294Ad7b96936B5de069e03cc1E0](https://testnet.snowtrace.io/address/0x3155b3ac39E10294Ad7b96936B5de069e03cc1E0)
+[0x08c8f6bc7a4773E785AF321149D79E7315eE551C](https://testnet.snowtrace.io/address/0x08c8f6bc7a4773E785AF321149D79E7315eE551C)
 
 #### ERC20Token
-[0x04D1F70838221e929956197d49C5A33b385699d0](https://testnet.snowtrace.io/address/0x04D1F70838221e929956197d49C5A33b385699d0)
+[0x9bfb7bD31b26e3547D6442B187b3bC78aC1FD41a](https://testnet.snowtrace.io/address/0x9bfb7bD31b26e3547D6442B187b3bC78aC1FD41a)
 
 #### ERC721NFT
-[0x39D2F529B83Bb8bE678621cbA89F861debeF2Bf4](https://testnet.snowtrace.io/address/0x39D2F529B83Bb8bE678621cbA89F861debeF2Bf4)
+[0xcC85a83134F04c592720499EC0D2176D4DC31a41](https://testnet.snowtrace.io/address/0xcC85a83134F04c592720499EC0D2176D4DC31a41)
 
 #### ERC1155NFT
-[0x47bbec32F274745d71383554E64aC96A33823401](https://testnet.snowtrace.io/address/0x47bbec32F274745d71383554E64aC96A33823401)
+[0xaf13bE830fc5970a48eDc519AD852391ea9393de](https://testnet.snowtrace.io/address/0xaf13bE830fc5970a48eDc519AD852391ea9393de)
+
+#### TokenWithdrawer
+[0x526D0aDd1b0C7353E32D65e120a49b0E8D29886A](https://testnet.snowtrace.io/address/0x526D0aDd1b0C7353E32D65e120a49b0E8D29886A)
+
+
+### Testnet (Binance Smart Chain)
+
+#### NitroLeague
+[0x54354cC4617E228C725c96f0dEAD9fFf88043cBB](https://testnet.bscscan.com/address/0x54354cC4617E228C725c96f0dEAD9fFf88043cBB)
+
+#### RaceEventFactory
+[0x113e31A8a8AAE84ab823e4c23C257f645bed80F1](https://testnet.bscscan.com/address/0x113e31A8a8AAE84ab823e4c23C257f645bed80F1)
+
+#### RaceFactory
+[0x62d9a80802b36DA729e989D1825E491989695B60](https://testnet.bscscan.com/address/0x62d9a80802b36DA729e989D1825E491989695B60)
+
+#### RewardFactory
+[0xc2F483e265A5d24c5a602DaA7C73b2EE09fBA81D](https://testnet.bscscan.com/address/0xc2F483e265A5d24c5a602DaA7C73b2EE09fBA81D)
+
+#### RaceEvent
+[0xDA496044679c9f007ACC4556f3DEFE8c5b4355d5](https://testnet.bscscan.com/address/0xDA496044679c9f007ACC4556f3DEFE8c5b4355d5)
+
+#### Race
+[0x7B1bFeF9Cc4A6B63408076B9A35EF275694efA31](https://testnet.bscscan.com/address/0x7B1bFeF9Cc4A6B63408076B9A35EF275694efA31)
+
+#### RewardManager
+[0x8C44aBD9b3Bd170DDb85347F6f87d90fCC42e648](https://testnet.bscscan.com/address/0x8C44aBD9b3Bd170DDb85347F6f87d90fCC42e648)
+
+#### ERC20Token
+[0x5ce11024b768B77d5B1037795FC4B68D24adcF3F](https://testnet.bscscan.com/address/0x5ce11024b768B77d5B1037795FC4B68D24adcF3F)
+
+#### ERC721NFT
+[0xd60DB3765CB0B7c7a25a6d7b56C14F109c776937](https://testnet.bscscan.com/address/0xd60DB3765CB0B7c7a25a6d7b56C14F109c776937)
+
+#### ERC1155NFT
+[0x0D3Fe1Fcf676DC1CDB2AfebE548f016875f740CE](https://testnet.bscscan.com/address/0x0D3Fe1Fcf676DC1CDB2AfebE548f016875f740CE)
+
 
 
 ## Scripts:

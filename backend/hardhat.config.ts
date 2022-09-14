@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
     version: "0.8.16",
     settings: {
       optimizer: {
-        enabled: true,
+        enabled: false,
         runs: 200,
       },
     },
@@ -71,10 +71,9 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     //apiKey: process.env.ETHERSCAN_API_KEY,
-    apiKey: process.env.SNOWTRACE_API_KEY,
+    apiKey: process.env.BSCSCAN_API_KEY,
     //apiKey: process.env.POLYGONSCAN_API_KEY,
   },
 };
 
-module.exports = config
-// export default config;
+export default config;

@@ -1,8 +1,0 @@
-module.exports = [
-  [
-    "0x3e1820fB4A21D920b9E5CA02ECb3090B979a635c",
-    "0x131f0d765D60c1049B19cED1Dfe7c6150ec72ED0",
-    "0xb94e95bd8f43fe5e565bfbe3fb8a097e772c728e",
-    "0x18cacf80a73df50554a556870081bd5e69c9b68d",
-  ],
-];

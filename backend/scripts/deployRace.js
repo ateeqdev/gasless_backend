@@ -37,16 +37,21 @@ const setAddresses = async function () {
 };
 
 const createRaceEvent = async function () {
-  let nitro = await ethers.getContractFactory("NitroLeague");
+  const timestamp = Math.floor(Date.now() / 1000);
+  nitro = await ethers.getContractFactory("NitroLeague");
   nitro = await nitro.attach(addrs.nitroLeague);
   let tx = await nitro.setGame(owner.address);
   let receipt = tx.wait();
-  tx = nitro.createRaceEvent(
-    ["RaceEvent_ID_2", "RaceEvent_Title_2", "RaceEvent_URI_2"],
+  tx = await nitro.createRaceEvent(
+    [
+      "RaceEvent_ID_" + timestamp,
+      "RaceEvent_Title_" + timestamp,
+      "RaceEvent_URI_" + timestamp,
+    ],
     0
   );
   receipt = await tx.wait();
-  console.log(receipt.logs[0].address);
+  addrs.raceEvent = receipt.logs[0].address;
 };
 
 const createRace = async function () {
@@ -176,4 +181,9 @@ async function main() {
   await startRaceAndEndRace();
 }
 
-main();
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

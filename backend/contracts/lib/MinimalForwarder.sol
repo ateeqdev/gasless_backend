@@ -20,6 +20,7 @@ contract MinimalForwarder is EIP712 {
     struct ForwardRequest {
         address from;
         address to;
+        address relayer;
         uint256 value;
         uint256 gas;
         uint256 nonce;
@@ -28,15 +29,15 @@ contract MinimalForwarder is EIP712 {
 
     bytes32 private constant _TYPEHASH =
         keccak256(
-            "ForwardRequest(address from,address to,uint256 value,uint256 gas,uint256 nonce,bytes data)"
+            "ForwardRequest(address from,address to,address relayer,uint256 value,uint256 gas,uint256 nonce,bytes data)"
         );
 
     mapping(address => uint256) private _nonces;
 
     constructor() EIP712("MinimalForwarder", "0.0.1") {}
 
-    function getNonce(address from) public view returns (uint256) {
-        return _nonces[from];
+    function getNonce(address relayer) public view returns (uint256) {
+        return _nonces[relayer];
     }
 
     function verify(ForwardRequest calldata req, bytes calldata signature)
@@ -50,6 +51,7 @@ contract MinimalForwarder is EIP712 {
                     _TYPEHASH,
                     req.from,
                     req.to,
+                    req.relayer,
                     req.value,
                     req.gas,
                     req.nonce,
@@ -57,7 +59,7 @@ contract MinimalForwarder is EIP712 {
                 )
             )
         ).recover(signature);
-        return _nonces[req.from] == req.nonce && signer == req.from;
+        return _nonces[req.relayer] == req.nonce && signer == req.from;
     }
 
     function execute(ForwardRequest calldata req, bytes calldata signature)
@@ -69,7 +71,7 @@ contract MinimalForwarder is EIP712 {
             verify(req, signature),
             "MinimalForwarder: signature does not match request"
         );
-        _nonces[req.from] = req.nonce + 1;
+        _nonces[req.relayer] = req.nonce + 1;
 
         (bool success, bytes memory returndata) = req.to.call{
             gas: req.gas,

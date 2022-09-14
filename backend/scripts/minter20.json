@@ -1,0 +1,2609 @@
+{
+  "interface": {
+    "fragments": [
+      {
+        "name": null,
+        "type": "constructor",
+        "inputs": [
+          {
+            "name": "_name",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "_symbol",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "_forwarder",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "minter",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "dailyLimit",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "name": "Approval",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "owner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "value",
+            "type": "uint256",
+            "indexed": false,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      {
+        "name": "DailyMintLimitChanged",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousDailyMint",
+            "type": "uint256",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          },
+          {
+            "name": "newDailyMint",
+            "type": "uint256",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      {
+        "name": "MinterAccountChanged",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousMinter",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "newMinter",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      {
+        "name": "OwnershipTransferred",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousOwner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "newOwner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      {
+        "name": "Transfer",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "from",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "value",
+            "type": "uint256",
+            "indexed": false,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "_claimed",
+        "constant": true,
+        "inputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "allowance",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "owner",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "approve",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "balanceOf",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "decimals",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint8",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint8",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "decreaseAllowance",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "subtractedValue",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "getClaimed",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "context",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": "claimed",
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "increaseAllowance",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "addedValue",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "isTrustedForwarder",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "forwarder",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "lastChecked",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "maxDailyMint",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "mint",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "_to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "mintGame",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "_context",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "_to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "minter",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "name",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "owner",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "pauseMint",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newStatus",
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "paused",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "renounceOwnership",
+        "constant": false,
+        "inputs": [],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "resetMintCounter",
+        "constant": false,
+        "inputs": [],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "setDailyMintLimit",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newDailyMint",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "setMinter",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newMinter",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "symbol",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "totalSupply",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "transfer",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "transferFrom",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "from",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      {
+        "type": "function",
+        "name": "transferOwnership",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      }
+    ],
+    "_abiCoder": { "coerceFunc": null },
+    "functions": {
+      "_claimed(string,address)": {
+        "type": "function",
+        "name": "_claimed",
+        "constant": true,
+        "inputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "allowance(address,address)": {
+        "type": "function",
+        "name": "allowance",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "owner",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "approve(address,uint256)": {
+        "type": "function",
+        "name": "approve",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "balanceOf(address)": {
+        "type": "function",
+        "name": "balanceOf",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "decimals()": {
+        "type": "function",
+        "name": "decimals",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint8",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint8",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "decreaseAllowance(address,uint256)": {
+        "type": "function",
+        "name": "decreaseAllowance",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "subtractedValue",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "getClaimed(string,address)": {
+        "type": "function",
+        "name": "getClaimed",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "context",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": "claimed",
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "increaseAllowance(address,uint256)": {
+        "type": "function",
+        "name": "increaseAllowance",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "addedValue",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "isTrustedForwarder(address)": {
+        "type": "function",
+        "name": "isTrustedForwarder",
+        "constant": true,
+        "inputs": [
+          {
+            "name": "forwarder",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "lastChecked()": {
+        "type": "function",
+        "name": "lastChecked",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "maxDailyMint()": {
+        "type": "function",
+        "name": "maxDailyMint",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "mint(address,uint256)": {
+        "type": "function",
+        "name": "mint",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "_to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "mintGame(string,address,uint256)": {
+        "type": "function",
+        "name": "mintGame",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "_context",
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          },
+          {
+            "name": "_to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "minter()": {
+        "type": "function",
+        "name": "minter",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "name()": {
+        "type": "function",
+        "name": "name",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "owner()": {
+        "type": "function",
+        "name": "owner",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "pauseMint(bool)": {
+        "type": "function",
+        "name": "pauseMint",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newStatus",
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "paused()": {
+        "type": "function",
+        "name": "paused",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "renounceOwnership()": {
+        "type": "function",
+        "name": "renounceOwnership",
+        "constant": false,
+        "inputs": [],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "resetMintCounter()": {
+        "type": "function",
+        "name": "resetMintCounter",
+        "constant": false,
+        "inputs": [],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "setDailyMintLimit(uint256)": {
+        "type": "function",
+        "name": "setDailyMintLimit",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newDailyMint",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "setMinter(address)": {
+        "type": "function",
+        "name": "setMinter",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newMinter",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "symbol()": {
+        "type": "function",
+        "name": "symbol",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "string",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "string",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "totalSupply()": {
+        "type": "function",
+        "name": "totalSupply",
+        "constant": true,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": null,
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "gas": null,
+        "_isFragment": true
+      },
+      "transfer(address,uint256)": {
+        "type": "function",
+        "name": "transfer",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "transferFrom(address,address,uint256)": {
+        "type": "function",
+        "name": "transferFrom",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "from",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": null,
+            "type": "bool",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "bool",
+            "_isParamType": true
+          }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      },
+      "transferOwnership(address)": {
+        "type": "function",
+        "name": "transferOwnership",
+        "constant": false,
+        "inputs": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "indexed": null,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "gas": null,
+        "_isFragment": true
+      }
+    },
+    "errors": {},
+    "events": {
+      "Approval(address,address,uint256)": {
+        "name": "Approval",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "owner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "spender",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "value",
+            "type": "uint256",
+            "indexed": false,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      "DailyMintLimitChanged(uint256,uint256)": {
+        "name": "DailyMintLimitChanged",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousDailyMint",
+            "type": "uint256",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          },
+          {
+            "name": "newDailyMint",
+            "type": "uint256",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      "MinterAccountChanged(address,address)": {
+        "name": "MinterAccountChanged",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousMinter",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "newMinter",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      "OwnershipTransferred(address,address)": {
+        "name": "OwnershipTransferred",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "previousOwner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "newOwner",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      },
+      "Transfer(address,address,uint256)": {
+        "name": "Transfer",
+        "anonymous": false,
+        "inputs": [
+          {
+            "name": "from",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "indexed": true,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "address",
+            "_isParamType": true
+          },
+          {
+            "name": "value",
+            "type": "uint256",
+            "indexed": false,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null,
+            "baseType": "uint256",
+            "_isParamType": true
+          }
+        ],
+        "type": "event",
+        "_isFragment": true
+      }
+    },
+    "structs": {},
+    "deploy": {
+      "name": null,
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string",
+          "indexed": null,
+          "components": null,
+          "arrayLength": null,
+          "arrayChildren": null,
+          "baseType": "string",
+          "_isParamType": true
+        },
+        {
+          "name": "_symbol",
+          "type": "string",
+          "indexed": null,
+          "components": null,
+          "arrayLength": null,
+          "arrayChildren": null,
+          "baseType": "string",
+          "_isParamType": true
+        },
+        {
+          "name": "_forwarder",
+          "type": "address",
+          "indexed": null,
+          "components": null,
+          "arrayLength": null,
+          "arrayChildren": null,
+          "baseType": "address",
+          "_isParamType": true
+        },
+        {
+          "name": "minter",
+          "type": "address",
+          "indexed": null,
+          "components": null,
+          "arrayLength": null,
+          "arrayChildren": null,
+          "baseType": "address",
+          "_isParamType": true
+        },
+        {
+          "name": "dailyLimit",
+          "type": "uint256",
+          "indexed": null,
+          "components": null,
+          "arrayLength": null,
+          "arrayChildren": null,
+          "baseType": "uint256",
+          "_isParamType": true
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "gas": null,
+      "_isFragment": true
+    },
+    "_isInterface": true
+  },
+  "provider": {
+    "_isProvider": true,
+    "_events": [],
+    "_emitted": { "block": -2 },
+    "disableCcipRead": false,
+    "formatter": {
+      "formats": {
+        "transaction": {},
+        "transactionRequest": {},
+        "receiptLog": {},
+        "receipt": {},
+        "block": {},
+        "blockWithTransactions": {},
+        "filter": {},
+        "filterLog": {}
+      }
+    },
+    "anyNetwork": false,
+    "_network": {
+      "name": "homestead",
+      "chainId": 1,
+      "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+    },
+    "_maxInternalBlockNumber": -1024,
+    "_lastBlockNumber": -2,
+    "_maxFilterBlockRange": 10,
+    "_pollingInterval": 4000,
+    "_fastQueryDate": 0,
+    "providerConfigs": [
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "connection": {
+            "allowGzip": true,
+            "url": "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213"
+          },
+          "_nextId": 42,
+          "apiKey": "84842078b09946638c03157f83405213",
+          "projectId": "84842078b09946638c03157f83405213",
+          "projectSecret": null
+        },
+        "weight": 1,
+        "stallTimeout": 2000,
+        "priority": 1
+      },
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "baseUrl": "https://api.etherscan.io",
+          "apiKey": "9D13ZE7XSBTJ94N9BNJ2MA33VMAY2YPIRB"
+        },
+        "weight": 1,
+        "stallTimeout": 2000,
+        "priority": 1
+      },
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "connection": {
+            "allowGzip": true,
+            "url": "https://eth-mainnet.alchemyapi.io/v2/_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC"
+          },
+          "_nextId": 42,
+          "apiKey": "_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC"
+        },
+        "weight": 1,
+        "stallTimeout": 2000,
+        "priority": 1
+      },
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "connection": {
+            "url": "https://eth-mainnet.gateway.pokt.network/v1/lb/6004bcd10040261633ade990",
+            "headers": {}
+          },
+          "_nextId": 42,
+          "applicationId": "6004bcd10040261633ade990",
+          "loadBalancer": true,
+          "applicationSecretKey": null
+        },
+        "weight": 1,
+        "stallTimeout": 2000,
+        "priority": 1
+      },
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "connection": { "url": "https://cloudflare-eth.com/" },
+          "_nextId": 42
+        },
+        "weight": 1,
+        "stallTimeout": 750,
+        "priority": 1
+      },
+      {
+        "provider": {
+          "_isProvider": true,
+          "_events": [],
+          "_emitted": { "block": -2 },
+          "disableCcipRead": false,
+          "formatter": {
+            "formats": {
+              "transaction": {},
+              "transactionRequest": {},
+              "receiptLog": {},
+              "receipt": {},
+              "block": {},
+              "blockWithTransactions": {},
+              "filter": {},
+              "filterLog": {}
+            }
+          },
+          "anyNetwork": false,
+          "_network": {
+            "name": "homestead",
+            "chainId": 1,
+            "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+          },
+          "_maxInternalBlockNumber": -1024,
+          "_lastBlockNumber": -2,
+          "_maxFilterBlockRange": 10,
+          "_pollingInterval": 4000,
+          "_fastQueryDate": 0,
+          "connection": {
+            "allowGzip": true,
+            "url": "https://rpc.ankr.com/eth/9f7d929b018cdffb338517efa06f58359e86ff1ffd350bc889738523659e7972"
+          },
+          "_nextId": 42,
+          "apiKey": "9f7d929b018cdffb338517efa06f58359e86ff1ffd350bc889738523659e7972"
+        },
+        "weight": 1,
+        "stallTimeout": 2000,
+        "priority": 1
+      }
+    ],
+    "quorum": 2,
+    "_highestBlockNumber": -1
+  },
+  "signer": {
+    "_isSigner": true,
+    "address": "0x3e1820fB4A21D920b9E5CA02ECb3090B979a635c",
+    "provider": {
+      "_isProvider": true,
+      "_events": [],
+      "_emitted": { "block": -2 },
+      "disableCcipRead": false,
+      "formatter": {
+        "formats": {
+          "transaction": {},
+          "transactionRequest": {},
+          "receiptLog": {},
+          "receipt": {},
+          "block": {},
+          "blockWithTransactions": {},
+          "filter": {},
+          "filterLog": {}
+        }
+      },
+      "anyNetwork": false,
+      "_network": {
+        "name": "homestead",
+        "chainId": 1,
+        "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+      },
+      "_maxInternalBlockNumber": -1024,
+      "_lastBlockNumber": -2,
+      "_maxFilterBlockRange": 10,
+      "_pollingInterval": 4000,
+      "_fastQueryDate": 0,
+      "providerConfigs": [
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "connection": {
+              "allowGzip": true,
+              "url": "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213"
+            },
+            "_nextId": 42,
+            "apiKey": "84842078b09946638c03157f83405213",
+            "projectId": "84842078b09946638c03157f83405213",
+            "projectSecret": null
+          },
+          "weight": 1,
+          "stallTimeout": 2000,
+          "priority": 1
+        },
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "baseUrl": "https://api.etherscan.io",
+            "apiKey": "9D13ZE7XSBTJ94N9BNJ2MA33VMAY2YPIRB"
+          },
+          "weight": 1,
+          "stallTimeout": 2000,
+          "priority": 1
+        },
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "connection": {
+              "allowGzip": true,
+              "url": "https://eth-mainnet.alchemyapi.io/v2/_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC"
+            },
+            "_nextId": 42,
+            "apiKey": "_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC"
+          },
+          "weight": 1,
+          "stallTimeout": 2000,
+          "priority": 1
+        },
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "connection": {
+              "url": "https://eth-mainnet.gateway.pokt.network/v1/lb/6004bcd10040261633ade990",
+              "headers": {}
+            },
+            "_nextId": 42,
+            "applicationId": "6004bcd10040261633ade990",
+            "loadBalancer": true,
+            "applicationSecretKey": null
+          },
+          "weight": 1,
+          "stallTimeout": 2000,
+          "priority": 1
+        },
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "connection": { "url": "https://cloudflare-eth.com/" },
+            "_nextId": 42
+          },
+          "weight": 1,
+          "stallTimeout": 750,
+          "priority": 1
+        },
+        {
+          "provider": {
+            "_isProvider": true,
+            "_events": [],
+            "_emitted": { "block": -2 },
+            "disableCcipRead": false,
+            "formatter": {
+              "formats": {
+                "transaction": {},
+                "transactionRequest": {},
+                "receiptLog": {},
+                "receipt": {},
+                "block": {},
+                "blockWithTransactions": {},
+                "filter": {},
+                "filterLog": {}
+              }
+            },
+            "anyNetwork": false,
+            "_network": {
+              "name": "homestead",
+              "chainId": 1,
+              "ensAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
+            },
+            "_maxInternalBlockNumber": -1024,
+            "_lastBlockNumber": -2,
+            "_maxFilterBlockRange": 10,
+            "_pollingInterval": 4000,
+            "_fastQueryDate": 0,
+            "connection": {
+              "allowGzip": true,
+              "url": "https://rpc.ankr.com/eth/9f7d929b018cdffb338517efa06f58359e86ff1ffd350bc889738523659e7972"
+            },
+            "_nextId": 42,
+            "apiKey": "9f7d929b018cdffb338517efa06f58359e86ff1ffd350bc889738523659e7972"
+          },
+          "weight": 1,
+          "stallTimeout": 2000,
+          "priority": 1
+        }
+      ],
+      "quorum": 2,
+      "_highestBlockNumber": -1
+    }
+  },
+  "callStatic": {},
+  "estimateGas": {},
+  "functions": {},
+  "populateTransaction": {},
+  "filters": {},
+  "_runningEvents": {},
+  "_wrappedEmits": {},
+  "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "resolvedAddress": {}
+}
